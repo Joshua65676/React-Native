@@ -4,10 +4,11 @@ import { Redirect, router} from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { images } from '../constants';
 import CustomButton from '../components/CustomButton';
+import 'react-native-url-polyfill/auto'
 
 export default function App() {
   return (
-    <SafeAreaView className="bg-primary h-full">
+    <SafeAreaView className="h-full bg-primary">
         <ScrollView contentContainerStyle={{ height: '100%'}}>
            <View className="w-full justify-center items-center min-h-[85vh] px-4">
              <Image
@@ -23,7 +24,7 @@ export default function App() {
              />
 
              <View className="relative mt-5">
-               <Text className="text-3xl text-white font-bold text-center">
+               <Text className="text-3xl font-bold text-center text-white">
                  Discover Endless Possibilities with{' '}
                  <Text className="text-secondary-200">
                     Aora
@@ -36,7 +37,7 @@ export default function App() {
                />
              </View>
               
-              <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">
+              <Text className="text-sm text-center text-gray-100 font-pregular mt-7">
                  Where creativity meets innovation: embark on a journey of limitless exploration with Aora
               </Text>
 
