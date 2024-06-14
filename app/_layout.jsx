@@ -3,6 +3,7 @@ import { Text, View } from 'react-native'
 import { SplashScreen, Stack } from 'expo-router';
 import React, { useEffect } from 'react'
 import { useFonts } from 'expo-font'
+import GlobalProvider from '../context/GlobalProvider';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -28,7 +29,8 @@ const RooyLayout = () => {
    if(!fontsLoaded && !error) return null;
 
   return (
-    <Stack>
+    <GlobalProvider>
+      <Stack>
         <Stack.Screen name="index"
          options={{ headerShown: false}}
         />
@@ -41,7 +43,8 @@ const RooyLayout = () => {
          {/* <Stack.Screen name="/search/[query]"
          options={{ headerShown: false}}
         /> */}
-    </Stack>
+      </Stack>
+    </GlobalProvider>
   )
 }
 
